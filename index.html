@@ -56,12 +56,47 @@
             color: #555;
             margin-top: 2px;
         }
+        /* Styles for the new navigation menu */
+        nav {
+            background-color: #333; /* Dark background for the nav bar */
+            padding: 10px 0;
+            text-align: center; /* Center the menu items */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Clear floats */
+        }
+        nav ul li {
+            display: inline-block; /* Arrange items horizontally */
+            margin: 0 10px; /* Spacing between menu items */
+        }
+        nav ul li a {
+            color: white; /* Link text color */
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #555; /* Hover effect for links */
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>GitHub Command Cheat Sheet</h1>
     </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Git Basics</a></li>
+            <li><a href="#">Advanced Git</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
     <main>
         <p>A quick reference for common Git and GitHub commands used through the terminal.</p>
 
