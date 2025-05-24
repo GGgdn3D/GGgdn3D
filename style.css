@@ -2,8 +2,8 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1e1e1e; /* Dark background for the body */
+    color: #d4d4d4; /* Light text color for readability */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #2a2a2a; /* Slightly lighter dark shade for header */
     color: #fff;
     padding: 1em 0;
     width: 100%;
@@ -38,7 +38,7 @@ button:hover {
 }
 
 footer {
-    background-color: #333;
+    background-color: #2a2a2a; /* Slightly lighter dark shade for footer */
     color: #fff;
     padding: 0.5em 0;
     width: 100%;
