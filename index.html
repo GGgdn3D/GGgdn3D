@@ -3,20 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Simple Web App</title>
+    <title>GitHub Command Cheat Sheet</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to the cheat sheet */
+        main {
+            text-align: left; /* Align text to the left for readability */
+            max-width: 800px; /* Constrain width for better reading */
+            margin: 20px auto; /* Center the main content block */
+        }
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #333;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #c7254e; /* A common color for code */
+        }
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+        }
+        pre code {
+            background-color: transparent; /* No double background for code inside pre */
+            padding: 0;
+            color: inherit;
+        }
+        ul {
+            list-style-type: none; /* Remove default bullets for cleaner look */
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #0056b3;
+        }
+        .command-desc {
+            display: block;
+            font-style: italic;
+            color: #555;
+            margin-top: 2px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Simple App!</h1>
+        <h1>GitHub Command Cheat Sheet</h1>
     </header>
     <main>
-        <p id="message">This is the initial message.</p>
-        <button id="changeButton">Change Message</button>
+        <p>A quick reference for common Git and GitHub commands used through the terminal.</p>
+
+        <h2>Initial Setup & Configuration</h2>
+        <ul>
+            <li><code>git config --global user.name "Your Name"</code>
+                <span class="command-desc">Set the name that will be attached to your commits.</span></li>
+            <li><code>git config --global user.email "youremail@example.com"</code>
+                <span class="command-desc">Set the email that will be attached to your commits.</span></li>
+            <li><code>git init</code>
+                <span class="command-desc">Initialize a new local Git repository in the current directory.</span></li>
+        </ul>
+
+        <h2>Cloning & Getting Repositories</h2>
+        <ul>
+            <li><code>git clone &lt;repository_url&gt;</code>
+                <span class="command-desc">Download a repository from a remote URL (e.g., GitHub) into a new directory.</span></li>
+            <li><code>git clone &lt;repository_url&gt; &lt;directory_name&gt;</code>
+                <span class="command-desc">Clone into a specifically named local directory.</span></li>
+        </ul>
+
+        <h2>Making Changes (The Basic Workflow)</h2>
+        <ol>
+            <li><strong>Modify your files</strong> in your working directory.</li>
+            <li><code>git status</code>
+                <span class="command-desc">Show the status of changes (untracked, modified, staged).</span></li>
+            <li><code>git add &lt;file_name&gt;</code>
+                <span class="command-desc">Stage a specific file, preparing it for commit.</span></li>
+            <li><code>git add .</code>
+                <span class="command-desc">Stage all changes (new and modified files) in the current directory and subdirectories.</span></li>
+            <li><code>git commit -m "Your descriptive commit message"</code>
+                <span class="command-desc">Save your staged changes to the local repository history with a message.</span></li>
+        </ol>
+
+        <h2>Branching</h2>
+        <ul>
+            <li><code>git branch</code>
+                <span class="command-desc">List all local branches. The current branch is marked with an asterisk (*).</span></li>
+            <li><code>git branch &lt;branch_name&gt;</code>
+                <span class="command-desc">Create a new branch based on the current commit.</span></li>
+            <li><code>git checkout &lt;branch_name&gt;</code>
+                <span class="command-desc">Switch to an existing branch.</span></li>
+            <li><code>git checkout -b &lt;new_branch_name&gt;</code>
+                <span class="command-desc">Create a new branch and switch to it immediately.</span></li>
+            <li><code>git merge &lt;branch_name&gt;</code>
+                <span class="command-desc">Merge changes from <code>&lt;branch_name&gt;</code> into the current branch.</span></li>
+            <li><code>git branch -d &lt;branch_name&gt;</code>
+                <span class="command-desc">Delete a local branch (only if it has been merged).</span></li>
+            <li><code>git branch -D &lt;branch_name&gt;</code>
+                <span class="command-desc">Force delete a local branch (even if not merged - use with caution).</span></li>
+        </ul>
+
+        <h2>Working with Remotes (e.g., GitHub)</h2>
+        <ul>
+            <li><code>git remote -v</code>
+                <span class="command-desc">List all configured remote repositories with their URLs.</span></li>
+            <li><code>git remote add &lt;name&gt; &lt;url&gt;</code>
+                <span class="command-desc">Add a new remote repository (e.g., <code>origin</code> is a common name for the primary remote).</span></li>
+            <li><code>git fetch &lt;remote_name&gt;</code>
+                <span class="command-desc">Download objects and refs from a remote repository but don't integrate into your local working branch.</span></li>
+            <li><code>git pull &lt;remote_name&gt; &lt;branch_name&gt;</code>
+                <span class="command-desc">Fetch changes from a remote branch and merge them into your current local branch. (Shorthand for <code>git fetch</code> then <code>git merge</code>).</span></li>
+            <li><code>git push &lt;remote_name&gt; &lt;branch_name&gt;</code>
+                <span class="command-desc">Upload local branch commits to the remote repository.</span></li>
+            <li><code>git push -u &lt;remote_name&gt; &lt;branch_name&gt;</code>
+                <span class="command-desc">Push and set the local branch to track the remote branch (for future simpler <code>git push</code> and <code>git pull</code>).</span></li>
+        </ul>
+
+        <h2>Inspecting History</h2>
+        <ul>
+            <li><code>git log</code>
+                <span class="command-desc">Show the commit history for the current branch.</span></li>
+            <li><code>git log --oneline --graph --decorate --all</code>
+                <span class="command-desc">A more concise and visual log showing all branches.</span></li>
+            <li><code>git diff</code>
+                <span class="command-desc">Show changes between your working directory and the staging area.</span></li>
+            <li><code>git diff --staged</code> (or <code>git diff --cached</code>)
+                <span class="command-desc">Show changes between your staging area and your last commit.</span></li>
+            <li><code>git show &lt;commit_hash&gt;</code>
+                <span class="command-desc">Show metadata and content changes of a specific commit.</span></li>
+        </ul>
+
+        <h2>Undoing Changes</h2>
+        <ul>
+            <li><code>git checkout -- &lt;file_name&gt;</code>
+                <span class="command-desc">Discard changes in the working directory for a specific file, reverting it to the last committed state. <strong>(Careful: Destructive!)</strong></span></li>
+            <li><code>git reset HEAD &lt;file_name&gt;</code>
+                <span class="command-desc">Unstage a file, removing it from the staging area but keeping changes in the working directory.</span></li>
+            <li><code>git reset &lt;commit_hash&gt;</code>
+                <span class="command-desc">Reset HEAD to a specific commit, unstaging changes. Does not touch working directory by default (mixed mode).</span></li>
+            <li><code>git reset --hard &lt;commit_hash&gt;</code>
+                <span class="command-desc">Reset HEAD, staging area, and working directory to a specific commit. <strong>(Very Careful: Destructive to uncommitted changes!)</strong></span></li>
+            <li><code>git revert &lt;commit_hash&gt;</code>
+                <span class="command-desc">Create a new commit that undoes the changes made in a specified commit (safer way to undo public commits).</span></li>
+        </ul>
+
+        <h2>Ignoring Files</h2>
+        <p>Create a file named <code>.gitignore</code> in the root of your repository. Add patterns for files or directories you want Git to ignore (e.g., build artifacts, log files, OS-specific files like <code>.DS_Store</code> or <code>Thumbs.db</code>).</p>
+        <pre><code class="language-bash"># Example .gitignore content:
+node_modules/
+dist/
+*.log
+.env
+.DS_Store
+Thumbs.db
+        </code></pre>
+
+        <h2>Tags</h2>
+        <ul>
+            <li><code>git tag &lt;tag_name&gt;</code>
+                <span class="command-desc">Create a lightweight tag at the current commit (e.g., <code>v1.0.0</code>).</span></li>
+            <li><code>git tag -a &lt;tag_name&gt; -m "Tag message"</code>
+                <span class="command-desc">Create an annotated tag with a message.</span></li>
+            <li><code>git push &lt;remote_name&gt; --tags</code>
+                <span class="command-desc">Push all local tags to the remote repository.</span></li>
+        </ul>
+
+        <h2>GitHub Specific Concepts (Beyond Git Commands)</h2>
+        <ul>
+            <li><strong>Pull Requests (PRs / MRs):</strong> A way to propose your changes to a repository. They allow for code review and discussion before merging your branch into the main codebase (e.g., `main` or `develop` branch).</li>
+            <li><strong>Issues:</strong> Used for tracking tasks, enhancements, bugs, and other project-related items.</li>
+            <li><strong>Forks:</strong> A personal copy of someone else's repository. You can freely experiment with changes in your fork and then optionally submit a pull request back to the original repository.</li>
+        </ul>
     </main>
     <footer>
-        <p>© 2023 Your Name</p>
+        <p>&copy; 2023 Your Name - Git Cheat Sheet</p>
     </footer>
-    <script src="script.js"></script>
+    <!-- The script.js is no longer needed for this static page, so we can remove or comment it out -->
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>
