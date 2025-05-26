@@ -4,7 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git Basics</title>
-    <link rel="stylesheet" href="style.css"> <!-- Optional: Link to your existing stylesheet for consistency -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional styles specific to the cheat sheet */
+        main {
+            text-align: left; /* Align text to the left for readability */
+            max-width: 800px; /* Constrain width for better reading */
+            margin: 20px auto; /* Center the main content block */
+        }
+        h2 {
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            margin-top: 20px;
+            color: #333;
+        }
+        code {
+            background-color: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #c7254e; /* A common color for code */
+        }
+        pre {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto; /* Allow horizontal scrolling for long code lines */
+        }
+        pre code {
+            background-color: transparent; /* No double background for code inside pre */
+            padding: 0;
+            color: inherit;
+        }
+        ul {
+            list-style-type: none; /* Remove default bullets for cleaner look */
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #0056b3;
+        }
+        .command-desc {
+            display: block;
+            font-style: italic;
+            color: #555;
+            margin-top: 2px;
+        }
+        /* Styles for the new navigation menu */
+        nav {
+            background-color: #333; /* Dark background for the nav bar */
+            padding: 10px 0;
+            text-align: center; /* Center the menu items */
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Clear floats */
+        }
+        nav ul li {
+            display: inline-block; /* Arrange items horizontally */
+            margin: 0 10px; /* Spacing between menu items */
+        }
+        nav ul li a {
+            color: white; /* Link text color */
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+        }
+        nav ul li a:hover {
+            background-color: #555; /* Hover effect for links */
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <header>
